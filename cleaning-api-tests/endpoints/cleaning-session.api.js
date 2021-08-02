@@ -9,10 +9,6 @@ module.exports = {
         I.say(`Testing with endpoint = ${endpoint}`);
     },
 
-    declareSummary(summary){
-        I.say(`Testing for: ${summary}`);
-    },
-
     addParamsToPayload(payload, roomSize, startingCoordinate, patches,instructions){
         // should add validation against undefined
         payload.roomSize = JSON.parse(roomSize);
