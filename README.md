@@ -8,6 +8,7 @@ You will need this before running:
     * Homebrew for OSX 
     * npm 
     * yarn
+    * webservice under test
 
 To install Homebrew, in your terminal, run the command
  
@@ -26,7 +27,11 @@ Yarn will download the dependencies needed to run this project
 Once you have completed the above steps, go to the project root folder and run this command to download dependencies:  
 
     yarn install
+
+To change url from default, set env variable CODECEPT_URL
+
+    export CODECEPT_URL="YOUR_ENV_UNDER_TEST"
     
 Use this command to run the UI test:
 
-    npx codeceptjs run --step 
+    npx codeceptjs run
