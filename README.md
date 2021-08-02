@@ -1,76 +1,32 @@
-This repo contains tests for TodoMVC application.
-Tests can be executed via different helpers.
+An example for codeceptjs rest calls with BDD
+============================================================
 
-![](todo.png)
+The setup below is intended for running on Macbook OSX. 
 
-# Installation
+You will need this before running: 
 
-This is a playground for your first steps in testing, so instead of installing it from NPM it is recommended to clone it from repo instead and then install the dependencies:
+    * Homebrew for OSX 
+    * npm 
+    * yarn
 
-```
-git clone git@github.com:codecept-js/examples.git codeceptjs-examples && cd codeceptjs-examples && npm install
-```
+To install Homebrew, in your terminal, run the command
+ 
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    
+Type `brew` in your terminal to see if homebrew is installed. If it is not a known command, try restarting your terminal and run the command again.    
 
-This will install CodeceptJS with Puppeteer, WebdriverIO & TestCafe packages. 
+If you don't have a preference to what version npm you're using, this command will install the most stable version of npm available
 
-# Running Tests
+    brew install npm
+     
+Yarn will download the dependencies needed to run this project  
 
-The default helper is Playwright.
+    npm install -g yarn
+     
+Once you have completed the above steps, go to the project root folder and run this command to download dependencies:  
 
-## Playwright
+    yarn install
+    
+Use this command to run the UI test:
 
-Use `codecept.conf.js` to run tests with Playwright:
-
-```
-npx codeceptjs run --steps
-```
-
-## Puppeteer
-
-Use `codecept.puppeteer.conf.js` to run tests with Puppeteer:
-
-```
-npx codeceptjs run --steps -c codecept.puppeteer.conf.js 
-```
-
-
-## WebdriverIO
-
-Use `codecept.webdriver.conf.js` to run tests with WebdriverIO in Chrome:
-
-```
-npx codeceptjs run -c codecept.webdriver.conf.js --steps 
-```
-
-## TestCafe
-
-Use `codecept.testcafe.conf.js` to run tests with TestCafe in Chrome:
-
-```
-npx codeceptjs run -c codecept.testcafe.conf.js --steps 
-```
-
-## Headless Mode
-
-Run tests in headless mode:
-
-```
-HEADLESS=true npx codeceptjs run --steps
-```
-
-## Parallel Execution
-
-Run tests in parallel with 3 workers:
-
-```
-npx codeceptjs run-workers 3
-```
-
-## Credits
-
-Created as part of codepress by Stefan Huber.
-Maintained by CodeceptJS Team.
-
-## LICENSE
-
-MIT
+    npx codeceptjs run --step 
