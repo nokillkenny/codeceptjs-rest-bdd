@@ -59,6 +59,6 @@ Scenario: Hoover is always on, even starting point
 # Todo: possible expected scenario. Or could add serverside validation error
 # Scenario: Empty coordinate array throws 400
 #   Given I am testing the cleaning session API
-#   When I have a payload: `{"roomSize": [],"coords": [1,2],"patches": [[1,2]],"instructions": ""}`
+#   When I have a payload: `{"roomSize": [5,5],"coords": [],"patches": [[1,2]],"instructions": ""}`
 #   Then I post and expect this response: `` with code: 400
 
