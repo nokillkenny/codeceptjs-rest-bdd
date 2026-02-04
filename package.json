@@ -1,27 +1,12 @@
 {
-  "name": "@codeceptjs/examples",
-  "version": "1.2.1",
-  "main": "index.js",
+  "name": "codeceptjs-rest-bdd",
+  "version": "1.0.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "codeceptjs run --features --steps",
+    "test:report": "codeceptjs run --features --steps --reporter mochawesome"
   },
-  "keywords": [],
-  "author": "kaflan, davert",
-  "license": "ISC",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/codecept-js/examples.git"
-  },
-  "bugs": {
-    "url": "https://github.com/codecept-js/examples/issues"
-  },
-  "homepage": "https://github.com/codecept-js/examples#readme",
-  "description": "",
   "devDependencies": {
-    "@codeceptjs/configure": "^0.5.0",
-    "@codeceptjs/ui": "^0.2.0",
-    "codeceptjs": "^3.0.7",
-    "codeceptjs-assert": "^0.0.5",
-    "util": "^0.12.4"
+    "codeceptjs": "^3.6",
+    "mochawesome": "^7.1"
   }
 }

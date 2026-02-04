@@ -1,37 +1,39 @@
-An example for codeceptjs rest calls with BDD
-============================================================
+# CodeceptJS REST BDD
 
-The setup below is intended for running on Macbook OSX. 
+![CI](https://github.com/nokillkenny/codeceptjs-rest-bdd/actions/workflows/test.yml/badge.svg)
 
-You will need this before running: 
+REST API testing with CodeceptJS using Gherkin BDD syntax.
 
-    * Homebrew for OSX 
-    * npm 
-    * yarn
-    * webservice under test
+## Stack
+- CodeceptJS 3.6
+- REST helper
+- Mochawesome reporter
 
-To install Homebrew, in your terminal, run the command
- 
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    
-Type `brew` in your terminal to see if homebrew is installed. If it is not a known command, try restarting your terminal and run the command again.    
+## Setup
 
-If you don't have a preference to what version npm you're using, this command will install the most stable version of npm available
+```bash
+npm install
+```
 
-    brew install npm
-     
-Yarn will download the dependencies needed to run this project  
+## Run Tests
 
-    npm install -g yarn
-     
-Once you have completed the above steps, go to the project root folder and run this command to download dependencies:  
+```bash
+# Run all tests
+npm test
 
-    yarn install
+# With HTML report
+npm run test:report
+```
 
-To change url from default, set env variable CODECEPT_URL
+## Structure
 
-    export CODECEPT_URL="YOUR_ENV_UNDER_TEST"
-    
-Use this command to run the UI test:
+```
+├── features/           # Gherkin feature files
+├── step_definitions/   # Step implementations
+├── reports/            # Test output
+└── codecept.conf.js    # Configuration
+```
 
-    npx codeceptjs run
+## CI
+
+Tests run in GitHub Actions with HTML reports uploaded as artifacts and aggregated to a central dashboard.

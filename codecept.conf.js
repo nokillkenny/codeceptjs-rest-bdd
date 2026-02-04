@@ -1,33 +1,29 @@
-// const { setHeadlessWhen } = require('@codeceptjs/configure');
-
-// setHeadlessWhen(process.env.HEADLESS);
-
 exports.config = {
-  tests: './todomvc-tests/**/*_test.js',
-  output: './output',
+  tests: './*_test.js',
+  output: './reports',
   helpers: {
     REST: {
-      endpoint: process.env.CODECEPT_URL || 'http://localhost:8080/',
-      defaultHeaders: {
-        // 'Content-Type': 'application/json'
-      }
+      endpoint: process.env.API_URL || 'https://jsonplaceholder.typicode.com',
     },
-    "AssertWrapper" : {
-      "require": "codeceptjs-assert"
-    }
+    JSONResponse: {}
   },
-
   gherkin: {
-    features: './cleaning-api-tests/features/*.feature',
+    features: './features/*.feature',
     steps: [
-      './cleaning-api-tests/step-definitions/cleaning-session.steps.js'
+      './step_definitions/api.steps.js',
+      './step_definitions/data-driven.steps.js'
     ]
   },
-
-  include: {
-    CleaningSessionEndpoint: './cleaning-api-tests/endpoints/cleaning-session.api.js'
+  plugins: {
+    allure: { enabled: false }
   },
-  bootstrap: null,
-  mocha: {},
-  name: 'codecept demo tests'
-}
+  mocha: {
+    reporterOptions: {
+      reportDir: 'reports',
+      reportFilename: 'report',
+      html: true,
+      json: false
+    }
+  },
+  name: 'codeceptjs-rest-bdd'
+};
