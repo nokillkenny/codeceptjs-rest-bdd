@@ -6,7 +6,7 @@
     "test:report": "codeceptjs run --features --steps --reporter mochawesome"
   },
   "devDependencies": {
-    "codeceptjs": "^3.6",
+    "codeceptjs": "^3.7",
     "mochawesome": "^7.1"
   },
     "overrides": {
